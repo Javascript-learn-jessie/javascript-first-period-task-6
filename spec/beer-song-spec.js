@@ -1,8 +1,9 @@
 const beerSong = require('../src/beer-song');
+const lyrics = require('../src/lyrics')
 const fs = require('fs');
 
 describe('beer song',function(){
-    var expectText = fs.readFileSync('./lyrics.md','utf-8');
+    var expectText = lyrics();
     it(':print the beer song',function(){
         spyOn(console,'log');
         var result = beerSong();
